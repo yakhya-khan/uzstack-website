@@ -603,11 +603,6 @@ h1 span {
   margin-top: 12px;
   font-size: 12px;
 }
-.product-copy .text-link {
-  margin-top: 30px;
-  color: var(--link);
-  font-size: 13px;
-}
 .product-visual {
   background-color: var(--surface-alt);
   background-image: radial-gradient(var(--border) 1px, transparent 1px);
@@ -1252,10 +1247,6 @@ h1 span {
   }
   .product-copy h3 {
     font-size: 30px;
-  }
-  .product-copy .text-link {
-    font-size: 12px;
-    gap: 7px;
   }
   .product-visual {
     border-left: 0;

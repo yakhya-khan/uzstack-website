@@ -5,7 +5,6 @@ export const site = {
   url: "https://uzstack.uz",
   locale: "ru",
   contacts: {
-    github: "https://github.com/yakhya-khan/uzstack-website",
     email: null, // Publish only after the mailbox is configured and verified.
   },
 } as const;
@@ -107,7 +106,6 @@ export const ru = {
     description:
       "Развиваем собственное программное решение. Продукт находится в разработке: подробности о возможностях и интерфейсе появятся по мере готовности.",
     disclaimer: "Публичного релиза и клиентского кейса пока нет.",
-    link: "Следить за UzStack на GitHub",
     visualLabel: "Концептуальная схема продукта, не скриншот приложения",
     visualCaption: "Концепция / не интерфейс продукта",
     visualTitle: "Идея приобретает форму",
@@ -175,6 +173,5 @@ export const ru = {
   footer: {
     tagline: "Программные решения. Системный подход.",
     top: "Наверх",
-    github: "GitHub проекта",
   },
 };

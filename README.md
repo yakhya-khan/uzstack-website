@@ -72,7 +72,7 @@ docs/
    | Environment variable | `NODE_VERSION=24.19.0` |
 
 4. **Save and Deploy публикует сайт** и включает последующие сборки при push. Выполняйте этот шаг только после явного согласования публикации.
-5. Проверьте адрес `*.pages.dev`: разделы, мобильное меню, темы, GitHub-ссылку, `/robots.txt`, `/sitemap.xml`, `/brand/og-image.png`.
+5. Проверьте адрес `*.pages.dev`: разделы, мобильное меню, темы, `/robots.txt`, `/sitemap.xml`, `/brand/og-image.png`.
 6. Домен `uzstack.uz` добавлен через **Custom domains**. Cloudflare создал запись `CNAME @ → uzstack-website.pages.dev`, Proxy status **Proxied**, TTL **Auto**. При повторной настройке сначала проверьте существующие записи; не создавайте дубликаты.
 
 Не нужны адаптер Cloudflare, Worker, база данных, секреты или Wrangler. Canonical и sitemap указывают основной домен `https://uzstack.uz/`. Для предварительных развёртываний проверьте доступ и индексацию в Cloudflare перед публикацией; `robots.txt` основного сайта разрешает индексацию.
