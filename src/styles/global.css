@@ -826,9 +826,6 @@ h1 span {
   border-radius: 12px;
   background: #142d50;
   color: #fff;
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 60px;
   padding: 54px;
 }
 .contact-panel .eyebrow {
@@ -845,20 +842,8 @@ h1 span {
   line-height: 1.8;
   max-width: 500px;
 }
-.contact-action {
-  align-self: center;
-}
-.button-light {
-  background: #fff;
-  color: #142d50;
-  width: 100%;
-}
-.button-light:hover {
-  color: #142d50;
-  background: #dbeafe;
-}
-.contact-action p {
-  font-size: 11px;
+.contact-note {
+  font-size: 12px;
   color: #c1cfe0;
   line-height: 1.8;
   margin-top: 18px;
@@ -960,7 +945,6 @@ h1 span {
   }
   .contact-panel {
     padding: 42px;
-    gap: 40px;
   }
 }
 @media (max-width: 900px) {
@@ -1094,7 +1078,6 @@ h1 span {
   }
   .contact-panel {
     padding: 35px;
-    gap: 32px;
   }
 }
 @media (max-width: 650px) {
@@ -1308,18 +1291,13 @@ h1 span {
     padding-bottom: 48px;
   }
   .contact-panel {
-    grid-template-columns: 1fr;
     padding: 31px 25px;
-    gap: 27px;
   }
   .contact-panel h2 {
     font-size: 29px;
   }
   .contact-description {
     font-size: 13px;
-  }
-  .contact-action {
-    max-width: 380px;
   }
   .footer {
     gap: 24px;
