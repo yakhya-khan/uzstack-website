@@ -12,6 +12,21 @@ import "../styles/global.css";
     <meta name="theme-color" content="#f7f9fc" />
     <link rel="canonical" href={`${site.url}/`} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link
+      rel="preload"
+      href="/fonts/inter-cyrillic-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content={site.name} />
@@ -39,7 +54,7 @@ import "../styles/global.css";
             matchMedia("(prefers-color-scheme: dark)").matches);
         document.documentElement.dataset.theme = dark ? "dark" : "light";
         document.querySelector('meta[name="theme-color"]').content = dark
-          ? "#0b1220"
+          ? "#080f1d"
           : "#f7f9fc";
       })();
     </script>

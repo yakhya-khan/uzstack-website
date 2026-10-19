@@ -1,6 +1,6 @@
 # UzStack
 
-Корпоративный сайт: Astro + TypeScript, статическая сборка без backend, UI-фреймворков, внешних шрифтов и аналитики. Основной язык — русский. Опубликован через Cloudflare Pages.
+Корпоративный сайт: Astro + TypeScript, статическая сборка без backend, UI-фреймворков и аналитики. Шрифт Inter хранится и загружается локально с сайта. Основной язык — русский. Опубликован через Cloudflare Pages.
 
 - Проект Pages: `uzstack-website`.
 - Адрес Pages: https://uzstack-website.pages.dev/
@@ -31,6 +31,7 @@ npm run preview  # Просмотр собранного сайта
 
 ```text
 src/
+  components/Brand.astro      — единая подпись логотипа в шапке и подвале
   components/Icon.astro       — SVG-иконки
   data/site.ts                — бренд, контакты, русские тексты
   layouts/Layout.astro        — HTML, метаданные, ранняя установка темы
@@ -40,14 +41,20 @@ src/
   scripts/navigation.ts       — темы и мобильное меню
   styles/global.css           — токены, компоненты, адаптивные стили
 public/
-  favicon.svg                 — оригинальный знак из трёх слоёв
-  brand/stack-architecture.svg — авторская иллюстрация
+  favicon.svg                 — многослойный знак по бренд-борду
+  brand/uzstack-mark.svg       — исходник знака
+  brand/architecture-panels.svg — иллюстрация стеклянных панелей
+  brand/ornament.svg           — геометрический орнамент
+  brand/app-icon.svg           — исходник иконки приложения
+  brand/apple-touch-icon.png   — иконка для домашнего экрана
   brand/og-image.svg           — исходник социального превью
   brand/og-image.png           — социальное превью 1200 × 630
+  fonts/                      — Inter WOFF2 и лицензия OFL
   _headers                    — заголовки Cloudflare Pages
 docs/
   PROJECT_BRIEF.md            — техническое задание
   CONTENT_NOTES.md            — источники текста и открытые вопросы
+  BRAND.md                    — визуальная система и источник шрифта
 ```
 
 Тексты меняйте в `src/data/site.ts`. Объект `site` содержит общие данные, `ru` — локализованный контент. Для узбекского (латиница) и английского можно добавить словари и языковые маршруты; текущий сайт русскоязычный. При добавлении маршрутов обновите sitemap, canonical и hreflang.
@@ -90,13 +97,13 @@ docs/
 
 Правило охватывает HTTP и HTTPS, сохраняет путь и параметры запроса. `www` не требуется добавлять как второй сайт в Pages. Проверены переходы с главной страницы, `/sitemap.xml?source=www-check&value=a%20b` по HTTPS и `/robots.txt?source=www-check` по HTTP на соответствующие адреса `https://uzstack.uz/`. Настройка следует [документации Cloudflare по перенаправлению доменов](https://developers.cloudflare.com/fundamentals/manage-domains/redirect-domain/).
 
-## Проверки первой версии
+## Проверки
 
 - `npm run check` и `npm run build`.
-- Chromium/Edge: ширины 320, 375, 390, 650, 768, 900, 1024 и 1440 px, отсутствие горизонтальной прокрутки.
+- После обновления дизайна: ширины 320, 375, 390, 700, 768, 900, 1024 и 1440 px, отсутствие горизонтальной прокрутки.
 - Обе темы, сохранение выбора, системная тема, мобильное меню, Escape, якоря, навигация без JavaScript.
 - Проверка axe-core по WCAG A/AA в обеих темах; она не заменяет полноценный ручной аудит.
-- Загрузка SVG, PNG, robots и sitemap; отсутствие браузерных ошибок.
+- Загрузка SVG, PNG, локального Inter, robots и sitemap; отсутствие браузерных ошибок.
 
 Временные QA-скрипты и скриншоты находятся в игнорируемом `.qa/`; используют инструменты рабочей среды и не входят в зависимости сайта. Числовые оценки Lighthouse не заявляются: Lighthouse не запускался.
 

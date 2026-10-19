@@ -12,7 +12,7 @@ function applyTheme(dark: boolean) {
   toggle?.setAttribute("aria-pressed", String(dark));
   document
     .querySelector<HTMLMetaElement>('meta[name="theme-color"]')
-    ?.setAttribute("content", dark ? "#0b1220" : "#f7f9fc");
+    ?.setAttribute("content", dark ? "#080f1d" : "#f7f9fc");
 }
 if (toggle) {
   toggle.hidden = false;
