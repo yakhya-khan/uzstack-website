@@ -77,6 +77,19 @@ docs/
 
 Не нужны адаптер Cloudflare, Worker, база данных, секреты или Wrangler. Canonical и sitemap указывают основной домен `https://uzstack.uz/`. Для предварительных развёртываний проверьте доступ и индексацию в Cloudflare перед публикацией; `robots.txt` основного сайта разрешает индексацию.
 
+### Перенаправление www
+
+В DNS-зоне настроена запись `A www → 192.0.2.1`, **Proxied**, TTL **Auto**. Это служебный адрес для редиректа на стороне Cloudflare, а не адрес сервера сайта; проксирование должно оставаться включённым.
+
+В **Rules → Redirect Rules** включён Single Redirect `WWW to uzstack.uz`:
+
+- Request URL: `http*://www.uzstack.uz/*`.
+- Target URL: `https://uzstack.uz/${2}`.
+- Status code: `301 — Permanent Redirect`.
+- Preserve query string: включено.
+
+Правило охватывает HTTP и HTTPS, сохраняет путь и параметры запроса. `www` не требуется добавлять как второй сайт в Pages. Проверены переходы с главной страницы, `/sitemap.xml?source=www-check&value=a%20b` по HTTPS и `/robots.txt?source=www-check` по HTTP на соответствующие адреса `https://uzstack.uz/`. Настройка следует [документации Cloudflare по перенаправлению доменов](https://developers.cloudflare.com/fundamentals/manage-domains/redirect-domain/).
+
 ## Проверки первой версии
 
 - `npm run check` и `npm run build`.
